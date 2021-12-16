@@ -7,11 +7,11 @@ local opt = {
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 
-map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
-map("n", "<leader>w", ":bd<CR>", opt)
+map("n", "<C-h>", ":BufferPrevious<CR>", opt)
+map("n", "<C-l>", ":BufferNext<CR>", opt)
+map("n", "<leader>w", ":BufferClose<CR>", opt)
 
-map('n', '<C-b>', ':NvimTreeToggle<CR>', opt)
+map('n', '<C-b>', ":lua require'plugin-config.nvim-tree'.toggle_tree()<CR>", opt)
 
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 
