@@ -1,6 +1,7 @@
 require('basic')
 require('plugins')
 require('keybindings')
+require('themes/airline')
 
 require('plugin-config/nvim-tree')
 require('plugin-config/bufferline')
