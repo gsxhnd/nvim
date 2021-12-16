@@ -12,10 +12,16 @@
 - [插件包管理器](doc/04-package-manage.md)
 - [插件配置]
   - [nvim-tree](doc/05-plugin/01-nvim-tree.md)
+  - [bufferline](doc/05-plugin/02-bufferline.md)
+  - [telescope](doc/05-plugin/03-telescope.md)
+  - [ranger](doc/05-plugin/04-ranger.md)
+  - [airline](doc/05-plugin/05-airline.md)
 - [LSP 配置](doc/06-lsp)
   - [lsp-install](doc/06-lsp/01-lsp-install.md)
-  - [自动代码补全](doc/06-lsp/01-lsp-install.md)
+  - [自动代码补全](doc/06-lsp/01-lsp-cmp.md)
 
 ## 学习教程
 
 [Vim 学习教程](https://github.com/iggredible/Learn-Vim)
+
+[Neovim 全 lua 配置](https://github.com/nshen/learn-neovim-lua)

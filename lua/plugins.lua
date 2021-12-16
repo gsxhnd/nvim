@@ -11,7 +11,6 @@ return require('packer').startup(function()
       'akinsho/bufferline.nvim', 
       requires = 'kyazdani42/nvim-web-devicons'
     }
-
     use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
