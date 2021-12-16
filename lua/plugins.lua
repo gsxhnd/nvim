@@ -20,6 +20,7 @@ return require('packer').startup(function()
         'francoiscabrol/ranger.vim',
         requires = {{'rbgrouleff/bclose.vim'}}
     }
+    use 'vim-airline/vim-airline'
     use { 
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate' 
