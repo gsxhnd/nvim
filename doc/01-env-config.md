@@ -1,12 +1,12 @@
 # 环境配置
 
-在开始之前
+在开始之前我们需要配置相应的环境环境
 
 ## Windows
 
 ### Terminal
 
-`Windows Terminal` 或者跨平台 Terminal `Tabby`
+`Windows Terminal`
 
 #### WSL2
 
@@ -18,15 +18,13 @@
 
 ## MacOS
 
-`iTerm2`
-
 安装 neovim
 
 ```shell
 brew install neovim
 ```
 
-## 字体
+## 安装字体
 
 部分插件 icon 依赖特定的字体，不安装字体会导致图标缺失。
 

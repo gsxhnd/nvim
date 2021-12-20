@@ -55,7 +55,7 @@ pluginKeys.cmp = function(cmp)
       -- 下一个
       ['<C-j>'] = cmp.mapping.select_next_item(),
       -- 出现补全
-      ['<A-.>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
       -- 取消
       ['<A-,>'] = cmp.mapping({
         i = cmp.mapping.abort(),
@@ -69,8 +69,8 @@ pluginKeys.cmp = function(cmp)
         behavior = cmp.ConfirmBehavior.Replace
       }),
       -- ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-      ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-      ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+      ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
     }
 end
 
