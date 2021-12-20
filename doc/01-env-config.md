@@ -30,6 +30,4 @@ brew install neovim
 
 部分插件 icon 依赖特定的字体，不安装字体会导致图标缺失。
 
-个人使用的是 `Jetbrains Mono`字体，已提前下载在 `font`文件夹下。安装字体后修改`Terminal`默认字体即可。
-
 支持的字体下载地址： <https://www.nerdfonts.com/>
