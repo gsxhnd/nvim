@@ -1,5 +1,6 @@
-require('basic')
+
 require('plugins')
+require('basic')
 require('keybindings')
 require('themes/airline')
 
