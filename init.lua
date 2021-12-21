@@ -1,4 +1,3 @@
-
 require('plugins')
 require('basic')
 require('keybindings')
@@ -11,6 +10,3 @@ require('plugin-config/nvim-treesitter')
 
 require('lsp/setup')
 require('lsp/nvim-cmp')
-
-
-
