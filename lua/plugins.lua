@@ -33,6 +33,12 @@ return require('packer').startup(function()
         'neovim/nvim-lspconfig',
         'williamboman/nvim-lsp-installer',
     }
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = {
+          'nvim-lua/plenary.nvim'
+        }
+    }
     -- nvim-cmp
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
