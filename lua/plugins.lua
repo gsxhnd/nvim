@@ -39,6 +39,7 @@ return require('packer').startup(function()
           'nvim-lua/plenary.nvim'
         }
     }
+    use "Pocco81/AutoSave.nvim"
     -- nvim-cmp
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
