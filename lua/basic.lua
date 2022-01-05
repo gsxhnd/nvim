@@ -71,8 +71,9 @@ vim.opt.termguicolors = true
 
 -- 不可见字符的显示，这里只把空格显示为一个点
 vim.o.list = true
--- vim.o.listchars = "space:·"
-vim.o.smarttab = true
+-- vim.o.listchars = "space:·,tab:…"
+-- vim.o.smarttab = true
+vim.api.nvim_command [[set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,space:·]]
 
 -- 补全增强
 vim.o.wildmenu = true
