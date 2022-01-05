@@ -4,28 +4,31 @@ local opt = {
     silent = true
 }
 
-vim.g.mapleader = ";"
-vim.g.maplocalleader = ";"
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+map("", "<Up>", "<NOP>", opt)
+map("", "<Down>", "<NOP>", opt)
+map("", "<Right>", "<NOP>", opt)
+map("", "<Left>", "<NOP>", opt)
 
 map("n", "<C-h>", ":BufferPrevious<CR>", opt)
 map("n", "<C-l>", ":BufferNext<CR>", opt)
-map("n", "<leader>w", ":BufferClose<CR>", opt)
+map("n", "<leader>bh", ":BufferPrevious<CR>", opt)
+map("n", "<leader>bl", ":BufferNext<CR>", opt)
+map("n", "<leader>bc", ":BufferClose<CR>", opt)
 
-map('n', '<C-b>', ":lua require'plugin-config.nvim-tree'.toggle_tree()<CR>", opt)
-
-map("n", "<C-p>", ":Telescope find_files<CR>", opt)
-
-map('n', '<leader>f', ':Ranger<CR>', opt)
+map('n', '<leader>ft', ":lua require'plugin-config.nvim-tree'.toggle_tree()<CR>", opt)
+map("n", "<leader>ff", ":Telescope find_files<CR>", opt)
 
 local pluginKeys = {}
+
 -- lsp 回调函数快捷键设置
 pluginKeys.maplsp = function(mapbuf)
     -- rename
     mapbuf('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
-    -- code action
     mapbuf('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opt)
   
-    -- go xx
     mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
     mapbuf('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
     mapbuf('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
@@ -36,11 +39,8 @@ pluginKeys.maplsp = function(mapbuf)
     mapbuf('n', 'gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opt)
     mapbuf('n', 'gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opt)
     -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
-  
-  
-    -- leader + =
     mapbuf('n', '<leader>=', '<cmd>lua vim.lsp.buf.formatting()<CR>', opt)
-  
+
     -- mapbuf('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opt)
     -- mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opt)
     -- mapbuf('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opt)
@@ -50,20 +50,13 @@ end
 
 pluginKeys.cmp = function(cmp)
     return {
-      -- 上一个
       ['<C-k>'] = cmp.mapping.select_prev_item(),
-      -- 下一个
       ['<C-j>'] = cmp.mapping.select_next_item(),
-      -- 出现补全
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-      -- 取消
       ['<A-,>'] = cmp.mapping({
         i = cmp.mapping.abort(),
         c = cmp.mapping.close(),
       }),
-      -- 确认
-      -- Accept currently selected item. If none selected, `select` first item.
-      -- Set `select` to `false` to only confirm explicitly selected items.
       ['<CR>'] = cmp.mapping.confirm({
         select = true ,
         behavior = cmp.ConfirmBehavior.Replace

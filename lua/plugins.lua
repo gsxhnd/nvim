@@ -19,10 +19,6 @@ return require('packer').startup(function()
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    use {
-        'francoiscabrol/ranger.vim',
-        requires = {{'rbgrouleff/bclose.vim'}}
-    }
     use 'vim-airline/vim-airline'
     use 'vim-airline/vim-airline-themes'
     use { 
