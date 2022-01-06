@@ -33,11 +33,11 @@ pluginKeys.maplsp = function(mapbuf)
     mapbuf('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
     mapbuf('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opt)
   
-    mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
-    mapbuf('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
-    mapbuf('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
-    mapbuf('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
-    mapbuf('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
+    mapbuf('n', '<leader>ld', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
+    mapbuf('n', '<leader>lh', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
+    mapbuf('n', '<leader>lD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
+    mapbuf('n', '<leader>li', '<cmd>lua vim.lsp.buf.implementation()<CR>', opt)
+    mapbuf('n', '<leader>lr', '<cmd>lua vim.lsp.buf.references()<CR>', opt)
     -- diagnostic
     mapbuf('n', 'go', '<cmd>lua vim.diagnostic.open_float()<CR>', opt)
     mapbuf('n', 'gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opt)
@@ -54,8 +54,8 @@ end
 
 pluginKeys.cmp = function(cmp)
     return {
-      ['<C-k>'] = cmp.mapping.select_prev_item(),
-      ['<C-j>'] = cmp.mapping.select_next_item(),
+      ['<s-Tab>'] = cmp.mapping.select_prev_item(),
+      ['<Tab>'] = cmp.mapping.select_next_item(),
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
       ['<A-,>'] = cmp.mapping({
         i = cmp.mapping.abort(),
