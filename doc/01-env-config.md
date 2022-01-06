@@ -8,7 +8,7 @@
 
 `Windows Terminal`
 
-#### WSL2
+### WSL2
 
 在 Windows 命令行环境下安装 Neovim
 

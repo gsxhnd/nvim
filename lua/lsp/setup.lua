@@ -4,7 +4,8 @@ local lsp_installer = require "nvim-lsp-installer"
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 -- { key: 语言 value: 配置文件 }
 local servers = {
-    gopls = require "lsp.go"
+    gopls = require "lsp.go",
+    clangd = require "lsp.clangd"
 }
 
 -- 自动安装 LanguageServers

@@ -7,19 +7,23 @@ local opt = {
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- 关闭方向键
 map("", "<Up>", "<NOP>", opt)
 map("", "<Down>", "<NOP>", opt)
 map("", "<Right>", "<NOP>", opt)
 map("", "<Left>", "<NOP>", opt)
 
+-- buffer keymap
 map("n", "<C-h>", ":bp<CR>", opt)
 map("n", "<C-l>", ":bn<CR>", opt)
 map("n", "<leader>bh", ":bp<CR>", opt)
 map("n", "<leader>bl", ":bn<CR>", opt)
 
+-- file keymap
 map('n', '<leader>ft', ":NvimTreeToggle<CR>", opt)
 map("n", "<leader>ff", ":Telescope find_files<CR>", opt)
 
+-- window keymap
 map("n", "<leader>wn", "<C-W>w", opt)
 map("n", "<leader>wc", ":close<CR>", opt)
 map("n", "<leader><Tab>", "<C-W>w", opt)

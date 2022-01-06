@@ -12,10 +12,9 @@
 - [插件包管理器](doc/04-package-manage.md)
 - [插件配置]
   - [nvim-tree](doc/05-plugin/01-nvim-tree.md)
-  - [bufferline](doc/05-plugin/02-bufferline.md)
+  - [lualine](doc/05-plugin/02-lualine.md)
   - [telescope](doc/05-plugin/03-telescope.md)
-  - [ranger](doc/05-plugin/04-ranger.md)
-  - [airline](doc/05-plugin/05-airline.md)
+  - [nvim-treesitter](doc/05-plugin/04-nvim-treesitter)
 - [LSP 配置](doc/06-lsp)
   - [lsp-install](doc/06-lsp/01-lsp-install.md)
   - [自动代码补全](doc/06-lsp/01-lsp-cmp.md)

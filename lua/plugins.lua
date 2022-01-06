@@ -11,14 +11,6 @@ return require('packer').startup(function()
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-    -- use {
-    --   'akinsho/bufferline.nvim', 
-    --   requires = 'kyazdani42/nvim-web-devicons'
-    -- }
-    -- use {
-    --     'romgrk/barbar.nvim',
-    --     requires = {'kyazdani42/nvim-web-devicons'}
-    -- }
     use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
@@ -48,7 +40,6 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
     -- use 'rafamadriz/friendly-snippets'
-    -- -- lspkind
     use 'onsails/lspkind-nvim'
 
     -- golang
