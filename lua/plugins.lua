@@ -7,20 +7,22 @@ return require('packer').startup(function()
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons'
     }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
     -- use {
     --   'akinsho/bufferline.nvim', 
     --   requires = 'kyazdani42/nvim-web-devicons'
     -- }
-    use {
-        'romgrk/barbar.nvim',
-        requires = {'kyazdani42/nvim-web-devicons'}
-    }
+    -- use {
+    --     'romgrk/barbar.nvim',
+    --     requires = {'kyazdani42/nvim-web-devicons'}
+    -- }
     use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
     use { 
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate' 

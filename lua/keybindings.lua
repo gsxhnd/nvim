@@ -12,14 +12,18 @@ map("", "<Down>", "<NOP>", opt)
 map("", "<Right>", "<NOP>", opt)
 map("", "<Left>", "<NOP>", opt)
 
-map("n", "<C-h>", ":BufferPrevious<CR>", opt)
-map("n", "<C-l>", ":BufferNext<CR>", opt)
-map("n", "<leader>bh", ":BufferPrevious<CR>", opt)
-map("n", "<leader>bl", ":BufferNext<CR>", opt)
-map("n", "<leader>bc", ":BufferClose<CR>", opt)
+map("n", "<C-h>", ":bp<CR>", opt)
+map("n", "<C-l>", ":bn<CR>", opt)
+map("n", "<leader>bh", ":bp<CR>", opt)
+map("n", "<leader>bl", ":bn<CR>", opt)
 
-map('n', '<leader>ft', ":lua require'plugin-config.nvim-tree'.toggle_tree()<CR>", opt)
+map('n', '<leader>ft', ":NvimTreeToggle<CR>", opt)
 map("n", "<leader>ff", ":Telescope find_files<CR>", opt)
+
+map("n", "<leader>wn", "<C-W>w", opt)
+map("n", "<leader>wc", ":close<CR>", opt)
+map("n", "<leader><Tab>", "<C-W>w", opt)
+
 
 local pluginKeys = {}
 

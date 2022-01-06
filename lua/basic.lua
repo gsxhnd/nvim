@@ -35,7 +35,7 @@ vim.o.hlsearch = false
 -- 边输入边搜索
 vim.o.incsearch = true
 -- 使用增强状态栏后不再需要 vim 的模式提示
-vim.o.showmode = false
+vim.o.showmode = true
 -- 命令行高为2，提供足够的显示空间
 vim.o.cmdheight = 2
 -- 当文件被外部程序修改时，自动加载
