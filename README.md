@@ -1,26 +1,54 @@
 # `Neovim`配置教程
 
-我自己使用的`neovim`配置，[使用已有配置步骤](doc/00-use-my-config.md)
+前提：
 
-如果你希望自己一步步完成配置可以参看下面的步骤
+- `Neovim`
+- 安装`font`目录下的字体
+- `Terminal`工具,修改默认字体
+- `git`命令
+- `ranger`命令
 
-## 目录
+如果你是`Windows`环境，推荐安装和使用`WSL2`。
 
-- [环境配置](doc/01-env-config.md)
-- [基础配置](doc/02-basic-config.md)
-- [快捷键配置](doc/03-keybindings.md)
-- [插件包管理器](doc/04-package-manage.md)
-- [插件配置]
-  - [nvim-tree](doc/05-plugin/01-nvim-tree.md)
-  - [lualine](doc/05-plugin/02-lualine.md)
-  - [telescope](doc/05-plugin/03-telescope.md)
-  - [nvim-treesitter](doc/05-plugin/04-nvim-treesitter)
-- [LSP 配置](doc/06-lsp)
-  - [lsp-install](doc/06-lsp/01-lsp-install.md)
-  - [自动代码补全](doc/06-lsp/01-lsp-cmp.md)
+## 下载配置
 
-## 学习教程
+将本仓库克隆到 neovim 的配置目录`~/.config/`下
 
-[Vim 学习教程](https://github.com/iggredible/Learn-Vim)
+```shell
+git clone https://github.com/gsxhnd/nvim.git ~/.config
+```
 
-[Neovim 全 lua 配置](https://github.com/nshen/learn-neovim-lua)
+## 安装包管理器
+
+```shell
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+## 修改插件配置
+
+### nvim-treesitter
+
+配置文件在`lua/plugin-config/nvim-treesitter.lua`
+
+#### 代理设置
+
+```lua
+require("nvim-treesitter.install").command_extra_args = {
+  curl = { "--proxy", "http://127.0.0.1:7890" },
+}
+```
+
+可以将代理地址`"http://127.0.0.1:7890"`修改成自己使用的代理地址，或者直接删除/注释代码
+
+#### 语言解析
+
+`ensure_installed = {"go","python"}`
+
+上边设置了确保安装`go`和`python`语言，可以根据你的情况修改和添加。
+
+通过在`nvim`中 `:TSInstallInfo`命令查看支持的语言
+
+## 安装插件
+
+修改完插件配置，进入`nvim`，通过 `:PackerSync`, 安装插件。
