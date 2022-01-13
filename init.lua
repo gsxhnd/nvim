@@ -4,6 +4,7 @@ require('keybindings')
 
 require('plugin-config/lualine')
 require('plugin-config/nvim-tree')
+require('plugin-config/nvim-gps')
 -- require('plugin-config/bufferline')
 -- require('plugin-config/barbar')
 require('plugin-config/gitsigns')

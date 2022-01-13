@@ -22,6 +22,10 @@ return require('packer').startup(function()
         run = ':TSUpdate' 
     }
     use {
+        "SmiteshP/nvim-gps",
+        requires = "nvim-treesitter/nvim-treesitter"
+    }
+    use {
         'neovim/nvim-lspconfig',
         'williamboman/nvim-lsp-installer',
     }
