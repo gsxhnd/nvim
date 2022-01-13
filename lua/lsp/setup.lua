@@ -5,7 +5,8 @@ local lsp_installer = require "nvim-lsp-installer"
 -- { key: 语言 value: 配置文件 }
 local servers = {
     gopls = require "lsp.go",
-    clangd = require "lsp.clangd"
+    clangd = require "lsp.clangd",
+    pyright = require "lsp.python"
 }
 
 -- 自动安装 LanguageServers
@@ -22,17 +23,19 @@ for name, _ in pairs(servers) do
 end
 
 lsp_installer.on_server_ready(function(server)
-    local opts = servers[server.name]
-    if opts then
-      opts.on_attach = function(_, bufnr)
-        print("Attaching " .. server.name .. "")
-        local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-        -- 绑定快捷键
-        require('keybindings').maplsp(buf_set_keymap)
-    end
-    opts.flags = {
-        debounce_text_changes = 150,
-    }
-    server:setup(opts)
-    end
+  local opts = servers[server.name]
+  print("Server " .. server.name)
+  if opts then
+    opts.on_attach = function(_, bufnr)
+      print("Attaching " .. server.name .. "")
+      local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+      -- 绑定快捷键
+      require('keybindings').maplsp(buf_set_keymap)
+  end
+  opts.flags = {
+      debounce_text_changes = 150,
+  }
+  end
+  print("setup")
+  server:setup(opts)
 end)

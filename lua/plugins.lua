@@ -48,6 +48,8 @@ return require('packer').startup(function()
     -- use 'rafamadriz/friendly-snippets'
     use 'onsails/lspkind-nvim'
 
+ 	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+
     -- golang
     use 'fatih/vim-go'
 end)

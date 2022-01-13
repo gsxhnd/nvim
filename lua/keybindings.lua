@@ -22,6 +22,7 @@ map("n", "<leader>bl", ":bn<CR>", opt)
 -- file keymap
 map('n', '<leader>ft', ":NvimTreeToggle<CR>", opt)
 map("n", "<leader>ff", ":Telescope find_files<CR>", opt)
+map("n","<leader>fo",":SymbolsOutline<CR>", opt)
 
 -- window keymap
 map("n", "<leader>wn", "<C-W>w", opt)
