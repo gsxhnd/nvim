@@ -3,11 +3,6 @@ return {
     filetypes = { "python" },
 	-- for postfix snippets and analyzers
     settings = {
-        analysis = {
-            autoSearchPaths = true,
-            diagnosticMode = "workspace",
-            useLibraryCodeForTypes = true
-        },
         python = {
             analysis = {
                 autoSearchPaths = true,
@@ -15,7 +10,7 @@ return {
                 useLibraryCodeForTypes = true
             },
             pythonPath = "venv/bin/python",
-            venvPath = "./venv/"
+            -- venvPath = "venv/bin/python"
         }
     },
 	on_attach = on_attach,

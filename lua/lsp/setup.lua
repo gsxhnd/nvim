@@ -24,7 +24,6 @@ end
 
 lsp_installer.on_server_ready(function(server)
   local opts = servers[server.name]
-  print("Server " .. server.name)
   if opts then
     opts.on_attach = function(_, bufnr)
       print("Attaching " .. server.name .. "")
@@ -35,7 +34,6 @@ lsp_installer.on_server_ready(function(server)
   opts.flags = {
       debounce_text_changes = 150,
   }
-  end
-  print("setup")
   server:setup(opts)
+  end
 end)
