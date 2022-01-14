@@ -12,7 +12,6 @@ return require('packer').startup(function()
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use 'simrat39/symbols-outline.nvim'
-    use {'stevearc/aerial.nvim'}
     use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
