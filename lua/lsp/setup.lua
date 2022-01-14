@@ -6,7 +6,8 @@ local lsp_installer = require "nvim-lsp-installer"
 local servers = {
     gopls = require "lsp.go",
     clangd = require "lsp.clangd",
-    pyright = require "lsp.python"
+    pyright = require "lsp.python",
+    tsserver = require "lsp.ts"
 }
 
 -- 自动安装 LanguageServers
