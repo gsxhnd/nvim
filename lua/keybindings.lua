@@ -18,6 +18,8 @@ map("n", "<C-h>", ":bp<CR>", opt)
 map("n", "<C-l>", ":bn<CR>", opt)
 map("n", "<C-j>", ":m +1<CR>", opt)
 map("n", "<C-k>", ":m -2<CR>", opt)
+map("v", "<C-j>", ":m '>+1<CR>gv", opt)
+map("v", "<C-k>", ":m '<-2<CR>gv", opt)
 
 map("n", "<leader>bh", ":bp<CR>", opt)
 map("n", "<leader>bl", ":bn<CR>", opt)
