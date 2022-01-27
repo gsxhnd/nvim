@@ -16,6 +16,9 @@ map("", "<Left>", "<NOP>", opt)
 -- buffer keymap
 map("n", "<C-h>", ":bp<CR>", opt)
 map("n", "<C-l>", ":bn<CR>", opt)
+map("n", "<C-j>", ":m +1<CR>", opt)
+map("n", "<C-k>", ":m -2<CR>", opt)
+
 map("n", "<leader>bh", ":bp<CR>", opt)
 map("n", "<leader>bl", ":bn<CR>", opt)
 map("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", opt)
@@ -24,6 +27,7 @@ map("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>", opt)
 map("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>", opt)
 map("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>", opt)
 map("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>", opt)
+
 
 -- file keymap
 map('n', '<leader>ft', ":NvimTreeToggle<CR>", opt)
