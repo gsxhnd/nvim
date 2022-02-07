@@ -1,22 +1,27 @@
 return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-    -- nord theme
+    -- theme
     use 'shaunsingh/nord.nvim'
+    -- layout plugin
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
     use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
     use 'simrat39/symbols-outline.nvim'
     use {'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
-    use { 'nvim-treesitter/nvim-treesitter',run = ':TSUpdate'}
+    use {'nvim-treesitter/nvim-treesitter',run = ':TSUpdate'}
     use {
         "SmiteshP/nvim-gps",
         requires = "nvim-treesitter/nvim-treesitter"
     }
+    -- lsp plugin
     use {
         'neovim/nvim-lspconfig',
         'williamboman/nvim-lsp-installer',
     }
+    -- key mapping
+    use 'folke/which-key.nvim'
+    -- svn plugin
     use {
         'lewis6991/gitsigns.nvim',
         requires = {
@@ -24,13 +29,12 @@ return require('packer').startup(function()
         }
     }
     use "Pocco81/AutoSave.nvim"
-    -- nvim-cmp
+    -- nvim-cmp vsnip
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
-    -- -- vsnip
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
     -- use 'rafamadriz/friendly-snippets'
