@@ -15,7 +15,6 @@ wk.register({
     f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
     t = {":NvimTreeToggle<CR>", "Toggle File Tree"},
     n = { "New File" }, -- just a label. don't create any mapping
-    e = "Edit File", -- same as above
   },
   b = {
     name = "Buffer",
