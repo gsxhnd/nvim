@@ -1,11 +1,38 @@
 local map = vim.api.nvim_set_keymap
+local wk = require("which-key")
 local opt = {
     noremap = true,
-    silent = true
+    silent = true,
 }
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+wk.register({
+  ["<Tab>"] = {"<C-W>w","Shift Window"},
+  f = {
+    name = "File", -- optional group name
+    f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
+    t = {":NvimTreeToggle<CR>", "Toggle File Tree"},
+    n = { "New File" }, -- just a label. don't create any mapping
+    e = "Edit File", -- same as above
+  },
+  b = {
+    name = "Buffer",
+    h = { ":bp<CR>","Previous Buffer" },
+    l = { ":bn<CR>","Next Buffer" },
+  },
+  w = {
+    name = "Window",
+    c = { ":close<CR>", "Close Window" },
+    n = {"<C-W>w","Shift Window" },
+  },
+  l = { 
+    name = "language",
+    o = {":SymbolsOutline<CR>", "Outline"},
+  }
+},
+{ prefix = "<leader>" })
 
 -- 关闭方向键
 map("", "<Up>", "<NOP>", opt)
@@ -20,26 +47,24 @@ map("n", "<C-j>", ":m +1<CR>", opt)
 map("n", "<C-k>", ":m -2<CR>", opt)
 map("v", "<C-j>", ":m '>+1<CR>gv", opt)
 map("v", "<C-k>", ":m '<-2<CR>gv", opt)
-
-map("n", "<leader>bh", ":bp<CR>", opt)
-map("n", "<leader>bl", ":bn<CR>", opt)
-map("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", opt)
-map("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>", opt)
-map("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>", opt)
-map("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>", opt)
-map("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>", opt)
-map("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>", opt)
+-- map("n", "<leader>bh", ":bp<CR>", opt)
+-- map("n", "<leader>bl", ":bn<CR>", opt)
+-- map("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", opt)
+-- map("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>", opt)
+-- map("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>", opt)
+-- map("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>", opt)
+-- map("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>", opt)
+-- map("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>", opt)
 
 
 -- file keymap
-map('n', '<leader>ft', ":NvimTreeToggle<CR>", opt)
-map("n", "<leader>ff", ":Telescope find_files<CR>", opt)
-map("n","<leader>fo",":SymbolsOutline<CR>", opt)
-
+-- map('n', '<leader>ft', ":NvimTreeToggle<CR>", opt)
+-- map("n", "<leader>ff", ":Telescope find_files<CR>", opt)
+-- map("n","<leader>fo",":SymbolsOutline<CR>", opt)
 -- window keymap
-map("n", "<leader>wn", "<C-W>w", opt)
-map("n", "<leader>wc", ":close<CR>", opt)
-map("n", "<leader><Tab>", "<C-W>w", opt)
+-- map("n", "<leader>wn", "<C-W>w", opt)
+-- map("n", "<leader>wc", ":close<CR>", opt)
+-- map("n", "<leader><Tab>", "<C-W>w", opt)
 
 
 local pluginKeys = {}
@@ -49,7 +74,6 @@ pluginKeys.maplsp = function(mapbuf)
     -- rename
     mapbuf('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opt)
     mapbuf('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opt)
-  
     mapbuf('n', '<leader>ld', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
     mapbuf('n', '<leader>lh', '<cmd>lua vim.lsp.buf.hover()<CR>', opt)
     mapbuf('n', '<leader>lD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opt)
