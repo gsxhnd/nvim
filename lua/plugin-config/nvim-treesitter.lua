@@ -1,6 +1,6 @@
-require("nvim-treesitter.install").command_extra_args = {
-  curl = { "--proxy", "http://127.0.0.1:7890" },
-}
+-- require("nvim-treesitter.install").command_extra_args = {
+--   curl = { "--proxy", "http://127.0.0.1:7890" },
+-- }
 
 require 'nvim-treesitter.configs'.setup {
   -- 安装 language parser
