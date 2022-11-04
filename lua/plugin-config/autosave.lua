@@ -1,8 +1,12 @@
-require("autosave").setup(
+require("auto-save").setup(
     {
         enabled = true,
-        execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
-        events = {"InsertLeave", "TextChanged"},
+        execution_message = {
+            message = function()
+                return "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S")
+            end
+        },
+        trigger_events = { "InsertLeave", "TextChanged" },
         conditions = {
             exists = true,
             filename_is_not = {},

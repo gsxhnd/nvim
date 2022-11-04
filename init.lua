@@ -11,6 +11,7 @@ require('plugin-config/gitsigns')
 require('plugin-config/autosave')
 
 require('plugin-config/nvim-treesitter')
+
 -- require('lsp/tabnine')
 -- require('lsp/setup')
 -- require('lsp/nvim-cmp')

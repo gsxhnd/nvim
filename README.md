@@ -15,13 +15,13 @@
 将本仓库克隆到 neovim 的配置目录`~/.config/`下
 
 ```shell
-git clone https://github.com/gsxhnd/nvim.git ~/.config
+git clone https://github.com/gsxhnd/nvim.git ~/.config/nvim
 ```
 
 ## 安装包管理器
 
 ```shell
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
@@ -39,7 +39,7 @@ require("nvim-treesitter.install").command_extra_args = {
 }
 ```
 
-可以将代理地址`"http://127.0.0.1:7890"`修改成自己使用的代理地址，或者直接删除/注释代码
+可以将代理地址`"http://127.0.0.1:7890"`修改成自己使用的代理地址，默认注释
 
 #### 语言解析
 
