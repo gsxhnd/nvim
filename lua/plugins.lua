@@ -4,9 +4,9 @@ return require('packer').startup(function()
     -- theme
     use 'shaunsingh/nord.nvim'
     -- layout plugin
-    use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
-    use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
-    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+    use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
+    use { 'nvim-tree/nvim-tree.lua', requires = 'nvim-tree/nvim-web-devicons' }
+    use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
     use 'simrat39/symbols-outline.nvim'
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' } } }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }

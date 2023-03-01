@@ -1,7 +1,11 @@
 -- vim.opt.termguicolors = true
 require("bufferline").setup {
     options = {
-        indicator_icon = '▎',
+        -- indicator = {
+        --     icon = '▎',
+        --     style = 'icon' | 'underline' | 'none',
+        -- },
+        indicator = {icon = '▎'},
         buffer_close_icon = '',
         modified_icon = '●',
         close_icon = '',
